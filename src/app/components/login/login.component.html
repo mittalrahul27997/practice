@@ -1,0 +1,19 @@
+<div class="container" style="text-align: center;">
+  <div>
+    <h1 class="colour top-pad">LOGIN</h1><br><br>
+  </div>
+  <form (ngSubmit)="loginFunc(loginForm)" #loginForm = "ngForm"><br>
+    <div class="spacing">
+      <input type="text" name = "email" [(ngModel)]="email" placeholder="Username or Email" autocomplete="off"><br>
+    </div>
+    <div class="spacing">
+      <input type="password" name = "password" [(ngModel)]="password" placeholder="Password" autocomplete="off"><br>
+    </div>
+    <div class="spacing">
+      <button type="submit">LogIn</button><br>
+    </div>
+  </form>
+  <div>
+    <p class="colour">New User &nbsp;<u><a routerLink="/register">Register</a></u></p>
+  </div>
+</div>

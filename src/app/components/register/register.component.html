@@ -1,0 +1,61 @@
+<div class="container" style="text-align: center;">
+  <div>
+    <h1 class="colour top-pad">REGISTER</h1>
+  </div>
+  <form (ngSubmit)="registration(registerForm)" #registerForm="ngForm">
+    <div class="form-group">
+      <div class="spacing">
+        <input type="text" name="username" [(ngModel)]='username' placeholder="Username" autocomplete="off" #usernameRef pattern="^[a-zA-Z0-9@_.]{5,}$" required><br>
+      </div>
+      <div *ngIf="registerForm.submitted && usernameRef && !usernameRef.validity.valid">
+          <p class="error-msg">Invalid Username!</p>
+      </div>
+      <div class="spacing">
+        <input type="text" name="email" [(ngModel)]="email" placeholder="Email" autocomplete="off" #emailRef
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required><br>
+      </div>
+      <div *ngIf="registerForm.submitted && emailRef && !emailRef.validity.valid">
+        <p class="error-msg">Invalid Email!</p>
+      </div>
+      <div class="spacing">
+        <input type="text" name="firstName" class="title-case" [(ngModel)]="firstName" placeholder="First Name"
+          autocomplete="off" #fnameRef pattern="^[a-zA-Z]{2,}$" required><br>
+      </div>
+      <div *ngIf="registerForm.submitted && fnameRef && !fnameRef.validity.valid">
+        <p class="error-msg">Invalid Name!</p>
+      </div>
+      <div class="spacing">
+        <input type="text" name="lastName" class="title-case" [(ngModel)]="lastName" placeholder="Last Name"
+          autocomplete="off" #lnameRef pattern="^[a-zA-Z]{2,}$" required><br>
+      </div>
+      <div *ngIf="registerForm.submitted && lnameRef && !lnameRef.validity.valid">
+          <p class="error-msg">Invalid Name!</p>
+      </div>
+      <div class="spacing">
+        <input type="number" name="phone" [(ngModel)]="phone" placeholder="Phone Number" autocomplete="off"
+          required><br>
+      </div>
+      <div class="spacing">
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password" autocomplete="off"
+          #passwordRef pattern="^[a-zA-Z0-9@#!$._-]{4,}$" required><br>
+      </div>
+      <div *ngIf="registerForm.submitted && passwordRef && !passwordRef.validity.valid">
+          <p class="error-msg">Invalid Password!</p>
+      </div>
+      <div class="spacing">
+        <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password"
+          autocomplete="off" required><br>
+      </div>
+      <div *ngIf="registerForm.submitted && passwordRef">
+          <p class="error-msg">Password Mis-match!</p>
+      </div>
+      <div class="spacing">
+        <button type="submit">Register</button><br>
+        <!-- <button type="submit" [disabled]="!registerForm.form.valid">Register</button><br> -->
+      </div>
+    </div>
+    </form>
+    <div>
+      <p class="colour">Already have an account &nbsp;<u><a routerLink="/login">LogIn</a></u></p>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<app-header [title]=title></app-header>
+<div class="row" style="text-align:center;">
+    <div class="col-sm-12 colour">
+      <h2>Page Four Welcomes You</h2>
+      <span>Select one of the pages</span>
+    </div>
+</div>
+<div class="row" style="text-align:center;">
+  <div class="col-sm-4">
+    <a routerLink="four-one" (click)="fourFunction('one')"><u>First</u></a>
+  </div>
+  <div class="col-sm-4">
+    <a routerLink="four-two" (click)="fourFunction('two')"><u>Second</u></a>
+  </div>
+  <div class="col-sm-4">
+    <!-- <a (click)="gotoPage('four/four-three')"><u>Third</u></a> -->
+    <a routerLink="four-three" (click)="fourFunction('three')"><u>Third</u></a>
+  </div>
+</div><br><br>
+<router-outlet></router-outlet>

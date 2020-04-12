@@ -1,0 +1,22 @@
+<app-header [title]=title></app-header>
+<div class="container">
+  <form #oneForm (ngSubmit)="oneSubmit('oneForm')">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <label class="colour">Phone Number</label><br>
+          <input type="number" class="form-control" name="phoneNumber">
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"><br>
+          <button type="submit">Submit</button>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+  </form>
+</div>

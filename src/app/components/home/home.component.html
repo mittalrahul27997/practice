@@ -1,0 +1,25 @@
+<app-header [title]=title></app-header>
+<!-- <app-logout></app-logout> -->
+<div class="container">
+  <form (ngSubmit)="submitAction(submitForm)" #submitForm="ngForm">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <span class="colour">Name</span><br>
+          <input type="text" class="form-control" name="name"><br>
+          <span class="colour">Email</span><br>
+          <input type="text" class="form-control" name="email"><br>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <button type="submit">SUBMIT</button>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+  </form>
+</div>

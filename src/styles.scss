@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+.colour {
+    color: antiquewhite;
+}
+
+button {
+    border-radius: 5px;
+    background: rgb(200, 221, 226);
+}
+
+.form-control {
+    background: rgb(200, 221, 226);
+}
+
+a{
+    color: rgb(198, 236, 138);
+}
+a:hover {
+    // background-color: rgb(128, 236, 240);
+    color: rgb(228, 231, 21);
+}
+
+.top-pad {
+    padding-top: 20px;
+}
+
+.spacing {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input {
+    background: rgb(210, 241, 245);
+    border-radius: 5px;
+    padding-left: .8%;
+    height: 35px;
+}
+
+.centre {
+    text-align: center;
+}
+
+.title-case {
+    text-transform: capitalize;
+}
+
+.error-msg {
+    font-size: 85%;
+    color: #dc3545;
+    margin-top: -1%;
+    margin-bottom: 0%;
+    margin-left: 15%;
+    text-align: center !important;
+}
