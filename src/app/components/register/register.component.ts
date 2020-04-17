@@ -19,8 +19,12 @@ export class RegisterComponent implements OnInit {
 
   registration(registerData: any) {
     console.log('registerData:   ', registerData, '\n\n\n\n');
+    // if (registerData.form.valid) {
+    //   if (this.valueCheck(registerData.form.value)) {
+    //     const token = random.toString();
     if (registerData.form.valid) {
-      if (this.valueCheck(registerData.form.value)) {
+      this.valueCheck(registerData.form.value);
+      if (this.isPasswordMatch) {
         const token = random.toString();
         localStorage.setItem('userToken', token);
         this.registrationData = registerData.form.value;
@@ -29,15 +33,13 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem('password', this.registrationData.password);
         localStorage.setItem('username', this.registrationData.username);
         this.router.navigate(['login']);
+      } else {
+        alert('Password Mismatch!');
       }
-      // else {
-      //   alert('Password did not match!');
-      // }
     }
-    registerData.reset();
   }
 
-  valueCheck(registerData: any) {
+  valueCheck(registerData: any): boolean {
     if ( registerData.password === registerData.confirmPassword) {
       this.isPasswordMatch = true;
       return true;

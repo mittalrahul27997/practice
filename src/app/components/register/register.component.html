@@ -44,9 +44,9 @@
       </div>
       <div class="spacing">
         <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirm Password"
-          autocomplete="off" required><br>
+        #confirmPasswordRef autocomplete="off" required><br>
       </div>
-      <div *ngIf="registerForm.submitted && passwordRef">
+      <div *ngIf="registerForm.submitted && passwordRef && confirmPasswordRef && (passwordRef !== confirmPasswordRef)">
           <p class="error-msg">Password Mis-match!</p>
       </div>
       <div class="spacing">
